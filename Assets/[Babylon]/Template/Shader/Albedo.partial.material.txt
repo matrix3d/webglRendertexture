@@ -1,0 +1,25 @@
+module #ROOTNAMESPACE# {
+    /**
+    * Babylon Shader Material
+    * @class #SHADERNAME#
+    */
+    export class #SHADERNAME# extends BABYLON.UniversalAlbedoMaterial {
+        public constructor(name: string, scene: BABYLON.Scene) {
+            super(name, scene);
+            this.enableShaderChunks = true;
+        }
+        public getShaderName(): string {
+            return "pbr";
+        }
+        public getShaderChunk(): string {
+            return "#SHADERFILE#";
+        }
+        public getCustomAttributes(): string[] {
+            return null; // Optional: Custom Attributes
+        }
+        protected updateShaderChunks(): void {
+            // Optional: Update Material Shader Chunks
+        }
+    }
+    BABYLON._TypeStore.RegisteredTypes["#SHADERNAME#"] = #SHADERNAME#;
+}

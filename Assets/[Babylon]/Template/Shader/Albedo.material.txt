@@ -1,0 +1,18 @@
+module #ROOTNAMESPACE# {
+    /**
+    * Babylon Shader Material
+    * @class #SHADERNAME#
+    */
+    export class #SHADERNAME# extends BABYLON.UniversalAlbedoMaterial {
+        public constructor(name: string, scene: BABYLON.Scene) {
+            super(name, scene);
+        }
+        public getShaderName(): string {
+            return "#SHADERFILE#";
+        }
+        public getCustomAttributes(): string[] {
+            return null; // Optional: Custom Attributes
+        }
+    }
+    BABYLON._TypeStore.RegisteredTypes["#SHADERNAME#"] = #SHADERNAME#;
+}

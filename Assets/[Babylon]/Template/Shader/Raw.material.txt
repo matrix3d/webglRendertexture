@@ -1,0 +1,30 @@
+module #ROOTNAMESPACE# {
+    /**
+    * Babylon Shader Material
+    * @class #SHADERNAME#
+    */
+    export class #SHADERNAME# extends BABYLON.ShaderMaterial {
+        public constructor(name: string, scene: BABYLON.Scene) {
+            super(name, scene, null, null);
+        }
+        public getShaderName(): string {
+            return "#SHADERFILE#";
+        }
+        public getAlphaBlending(): boolean {
+            return false;
+        }
+        public getAlphaTesting(): boolean {
+            return false;
+        }
+        public getDefaultDefines(): string[] {
+            return ["#define DIFFUSECOLOR", "#define DIFFUSETEXTURE"];
+        }
+        public getDefaultAttributes(): string[] {
+            return ["position", "normal", "uv", "uv2", "color"];
+        }
+        public getDefaultUniforms(): string[] {
+            return ["world", "worldView", "worldViewProjection", "view", "projection", "viewProjection", "diffuseColor", "diffuseTexture", "diffuseTextureInfos", "diffuseTextureMatrix"];
+        }
+    }
+    BABYLON._TypeStore.RegisteredTypes["#SHADERNAME#"] = #SHADERNAME#;
+}
